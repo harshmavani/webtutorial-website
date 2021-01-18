@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<title>Live Demo: jQuery Toggle Text inside Elements</title>
+	<meta name="description" content="Try and test HTML code online in a simple and easy way using our free HTML editor and see the results in real-time." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+	<link rel="stylesheet" href="./assets/css/codemirror.css" />
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/default-1.2.css" />
+	<script src="./assets/js/jquery.min.js"></script>
+	<script src="./assets/js/codemirror.js"></script>
+	<script src="./assets/js/utility.js"></script>
+	<script src="./assets/js/xml.js"></script>    
+	<link rel="stylesheet" href="./assets/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<script src="./assets/js/clike.js"></script>
+<script src="./assets/js/php.js"></script>
+<script src="./assets/js/css.js"></script>
+<script src="./assets/js/htmlmixed.js"></script>
+<script src="./assets/js/javascript.js"></script>
+<script src="./assets/js/sql.js"></script>
+
+	<script>
+		$(document).ready(function(){
+        	updatePreview();
+    	});    
+	</script>
+</head>
+<body>
+	<div class="main_hw">
+		<div class="header clearfix">
+			<div class="top-ad-box">
+		</div>
+			<div class="logo">
+				<img src="assets/images/logo.png" alt="CodeLab" />
+				<span style="position: relative;font-size: 25px;top: 8px;margin-left:5px"> Code Area </span>
+			</div>
+			<div class="control-bar">
+				<div class="buttons">
+					<a onClick="updatePreview();" class="show-output">preview</a>
+					<a onClick="toggleView();" class="toggle-view" title="Change Editor Layout"><i class="fa fa-retweet" aria-hidden="true"></i>
+</a>
+				</div>                            
+			</div>               
+		</div>
+	</div>
+	<div class="frame-box vr">
+		<div class="pane-wrapper clearfix">
+			<div class="pane" id="code-pane">
+				<div class="outer-area">
+					<span class="show-preview-pane">&nbsp;</span>
+					<div class="inner-area">
+						<input type="hidden" id="current-code" name="current-code" />
+<textarea id="code" name="code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;jQuery Toggle Text inside Elements&lt;/title&gt;
+&lt;style&gt;
+	button {
+		padding: 5px 10px;
+		font-size: 14px;
+	}
+&lt;/style&gt;
+&lt;script src=&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+	$(document).ready(function(){
+		$(&quot;button&quot;).click(function(){
+			$(this).text($(this).text() == 'Order by Alphabet' ? 'Order by Category' : 'Order by Alphabet');
+		});
+	});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;button type=&quot;button&quot;&gt;Order by Alphabet&lt;/button&gt;
+	&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Click on the button to swap the text.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>	
+													<script>
+							var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+								mode: "text/html",
+								tabMode: "indent",
+								styleActiveLine: true,
+								lineNumbers: true,
+								lineWrapping: true
+							});
+						</script>									
+					</div>
+				</div>
+			</div>
+			<div class="pane" id="preview-pane">
+				<div class="outer-wrapper">
+					<span class="hide-preview-pane">&nbsp;</span>
+					<div class="output-area">
+						<iframe id="preview" name="preview"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="code_footer_h">
+	<div class="col inline_icon_h">
+	<img src="assets/images/logo.png" alt="CodeLab" width="25px" /></div>
+		</div>
+	</footer>
+</body>
+
+</html>
+

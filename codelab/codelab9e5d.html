@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<title>Live Demo: Example of CSS cursor property</title>
+	<meta name="description" content="Try and test HTML code online in a simple and easy way using our free HTML editor and see the results in real-time." />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+	<link rel="stylesheet" href="./assets/css/codemirror.css" />
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/default-1.2.css" />
+	<script src="./assets/js/jquery.min.js"></script>
+	<script src="./assets/js/codemirror.js"></script>
+	<script src="./assets/js/utility.js"></script>
+	<script src="./assets/js/xml.js"></script>    
+	<link rel="stylesheet" href="./assets/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<script src="./assets/js/clike.js"></script>
+<script src="./assets/js/php.js"></script>
+<script src="./assets/js/css.js"></script>
+<script src="./assets/js/htmlmixed.js"></script>
+<script src="./assets/js/javascript.js"></script>
+<script src="./assets/js/sql.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			updatePreview();
+		});    
+	</script>
+</head>
+<body>
+	<div class="main_hw">
+		<div class="header clearfix">
+			<div class="top-ad-box">
+		</div>
+			<div class="logo">
+				<img src="assets/images/logo.png" alt="CodeLab" />
+				<span style="position: relative;font-size: 25px;top: 8px;margin-left:5px"> Code Area </span>
+			</div>
+			<div class="control-bar">
+				<div class="buttons">
+					<a onClick="updatePreview();" class="show-output">preview</a>
+					<a onClick="toggleView();" class="toggle-view" title="Change Editor Layout"><i class="fa fa-retweet" aria-hidden="true"></i>
+</a>
+				</div>                            
+			</div>               
+		</div>
+	</div>
+	<div class="frame-box vr">
+		<div class="pane-wrapper clearfix">
+			<div class="pane" id="code-pane">
+				<div class="outer-area">
+					<span class="show-preview-pane">&nbsp;</span>
+					<div class="inner-area">
+						<input type="hidden" id="current-code" name="current-code" />
+<textarea id="code" name="code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;Example of CSS cursor property&lt;/title&gt;
+&lt;style&gt;
+	a {
+		cursor: url(&quot;/output_file/images/custom.gif&quot;), url(&quot;/output_file/images/custom.cur&quot;), default;
+	}
+	.cursor-demo span{
+		min-width: 100px;
+		padding: 5px 10px;
+		margin-bottom: 5px;
+		display: inline-block;
+		border: 1px solid grey;
+		border-radius: 3px;   
+	}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;h1&gt;Custom Cursor&lt;/h1&gt;
+	&lt;p&gt;Place your mouse pointer &lt;a href=&quot;#&quot;&gt;over me&lt;/a&gt; to reveal the custom cursor.&lt;/p&gt;
+	&lt;hr&gt;
+	&lt;h2&gt;More Cursors&lt;/h2&gt;
+	&lt;p&gt;Place your mouse pointer over the box to reveal the cursor.&lt;/p&gt;
+	&lt;div class=&quot;cursor-demo&quot;&gt;
+		&lt;span style=&quot;cursor: auto;&quot;&gt;auto&lt;/span&gt;
+		&lt;span style=&quot;cursor: default;&quot;&gt;default&lt;/span&gt;
+		&lt;span style=&quot;cursor: none;&quot;&gt;none&lt;/span&gt;
+		&lt;span style=&quot;cursor: context-menu;&quot;&gt;context-menu&lt;/span&gt;
+		&lt;span style=&quot;cursor: help;&quot;&gt;help&lt;/span&gt;
+		&lt;span style=&quot;cursor: pointer;&quot;&gt;pointer&lt;/span&gt;
+		&lt;span style=&quot;cursor: progress;&quot;&gt;progress&lt;/span&gt;
+		&lt;span style=&quot;cursor: wait;&quot;&gt;wait&lt;/span&gt;
+		&lt;span style=&quot;cursor: cell;&quot;&gt;cell&lt;/span&gt;
+		&lt;span style=&quot;cursor: crosshair;&quot;&gt;crosshair&lt;/span&gt;
+		&lt;span style=&quot;cursor: text;&quot;&gt;text&lt;/span&gt; 
+		&lt;span style=&quot;cursor: vertical-text;&quot;&gt;vertical-text&lt;/span&gt;
+		&lt;span style=&quot;cursor: alias;&quot;&gt;alias&lt;/span&gt;
+		&lt;span style=&quot;cursor: copy;&quot;&gt;copy&lt;/span&gt;
+		&lt;span style=&quot;cursor: move;&quot;&gt;move&lt;/span&gt;
+		&lt;span style=&quot;cursor: no-drop;&quot;&gt;no-drop&lt;/span&gt;
+		&lt;span style=&quot;cursor: not-allowed;&quot;&gt;not-allowed&lt;/span&gt;
+		&lt;span style=&quot;cursor: grab;&quot;&gt;grab&lt;/span&gt;
+		&lt;span style=&quot;cursor: grabbing;&quot;&gt;grabbing&lt;/span&gt;
+		&lt;span style=&quot;cursor:e-resize&quot;&gt;e-resize&lt;/span&gt;
+		&lt;span style=&quot;cursor: n-resize;&quot;&gt;n-resize&lt;/span&gt;
+		&lt;span style=&quot;cursor: ne-resize;&quot;&gt;ne-resize&lt;/span&gt;
+		&lt;span style=&quot;cursor: nw-resize;&quot;&gt;nw-resize&lt;/span&gt;
+		&lt;span style=&quot;cursor: s-resize;&quot;&gt;s-resize&lt;/span&gt;
+		&lt;span style=&quot;cursor: se-resize;&quot;&gt;se-resize&lt;/span&gt;
+		&lt;span style=&quot;cursor: sw-resize;&quot;&gt;sw-resize&lt;/span&gt;
+		&lt;span style=&quot;cursor: w-resize;&quot;&gt;w-resize&lt;/span&gt;
+		&lt;span style=&quot;cursor: ew-resize;&quot;&gt;ew-resize&lt;/span&gt;
+		&lt;span style=&quot;cursor: ns-resize;&quot;&gt;ns-resize&lt;/span&gt;
+		&lt;span style=&quot;cursor: nesw-resize;&quot;&gt;nesw-resize&lt;/span&gt;
+		&lt;span style=&quot;cursor: nwse-resize;&quot;&gt;nwse-resize&lt;/span&gt;
+		&lt;span style=&quot;cursor: col-resize;&quot;&gt;col-resize&lt;/span&gt;
+		&lt;span style=&quot;cursor: row-resize;&quot;&gt;row-resize&lt;/span&gt;
+		&lt;span style=&quot;cursor: all-scroll;&quot;&gt;all-scroll&lt;/span&gt;
+		&lt;span style=&quot;cursor: zoom-in;&quot;&gt;zoom-in&lt;/span&gt;
+		&lt;span style=&quot;cursor: zoom-out;&quot;&gt;zoom-out&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>	
+													<script>
+							var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+								mode: "text/html",
+								tabMode: "indent",
+								styleActiveLine: true,
+								lineNumbers: true,
+								lineWrapping: true
+							});
+						</script>									
+					</div>
+				</div>
+			</div>
+			<div class="pane" id="preview-pane">
+				<div class="outer-wrapper">
+					<span class="hide-preview-pane">&nbsp;</span>
+					<div class="output-area">
+						<iframe id="preview" name="preview"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="code_footer_h">
+	<div class="col inline_icon_h">
+	<img src="assets/images/logo.png" alt="CodeLab" width="25px" /></div>
+		</div>
+	</footer>
+</body>
+
+</html>
+

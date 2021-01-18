@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<title>Live Demo: Bootstrap Elegant Table Design</title>
+    <meta name="description" content="Try and test HTML code online in a simple and easy way using our free HTML editor and see the results in real-time." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="./assets/css/codemirror.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/default-1.2.css" />
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/codemirror.js"></script>
+    <script src="./assets/js/utility.js"></script>
+    <script src="./assets/js/xml.js"></script>    
+    <link rel="stylesheet" href="./assets/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<script src="./assets/js/clike.js"></script>
+<script src="./assets/js/php.js"></script>
+<script src="./assets/js/css.js"></script>
+<script src="./assets/js/htmlmixed.js"></script>
+<script src="./assets/js/javascript.js"></script>
+<script src="./assets/js/sql.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            updatePreview();
+        });    
+    </script>
+</head>
+<body>
+    <div class="main_hw">
+        <div class="header clearfix">
+            <div class="top-ad-box">
+        </div>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="CodeLab" />
+                <span style="position: relative;font-size: 25px;top: 8px;margin-left:5px"> Code Area </span>
+            </div>
+            <div class="control-bar">
+                <div class="buttons">
+                    <a onClick="updatePreview();" class="show-output">preview</a>
+                    <a onClick="toggleView();" class="toggle-view" title="Change Editor Layout"><i class="fa fa-retweet" aria-hidden="true"></i>
+</a>
+                </div>                            
+            </div>               
+        </div>
+    </div>
+    <div class="frame-box vr">
+        <div class="pane-wrapper clearfix">
+            <div class="pane" id="code-pane">
+                <div class="outer-area">
+                    <span class="show-preview-pane">&nbsp;</span>
+                    <div class="inner-area">
+                        <input type="hidden" id="current-code" name="current-code" />
+<textarea id="code" name="code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;title&gt;Bootstrap Elegant Table Design&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto|Varela+Round&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;style&gt;
+body {
+    color: #566787;
+    background: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+}
+.table-responsive {
+    margin: 30px 0;
+}
+.table-wrapper {
+    min-width: 1000px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-title {
+    font-size: 15px;
+    padding-bottom: 10px;
+    margin: 0 0 10px;
+    min-height: 45px;
+}
+.table-title h2 {
+    margin: 5px 0 0;
+    font-size: 24px;
+}
+.table-title select {
+    border-color: #ddd;
+    border-width: 0 0 1px 0;
+    padding: 3px 10px 3px 5px;
+    margin: 0 5px;
+}
+.table-title .show-entries {
+    margin-top: 7px;
+}
+.search-box {
+    position: relative;
+    float: right;
+}
+.search-box .input-group {
+    min-width: 200px;
+    position: absolute;
+    right: 0;
+}
+.search-box .input-group-addon, .search-box input {
+    border-color: #ddd;
+    border-radius: 0;
+}
+.search-box .input-group-addon {
+    border: none;
+    border: none;
+    background: transparent;
+    position: absolute;
+    z-index: 9;
+}
+.search-box input {
+    height: 34px;
+    padding-left: 28px;		
+    box-shadow: none !important;
+    border-width: 0 0 1px 0;
+}
+.search-box input:focus {
+    border-color: #3FBAE4;
+}
+.search-box i {
+    color: #a0a5b1;
+    font-size: 19px;
+    position: relative;
+    top: 2px;
+    left: -10px;
+}
+table.table tr th, table.table tr td {
+    border-color: #e9e9e9;
+}
+table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+table.table td:last-child {
+    width: 130px;
+}
+table.table td a {
+    color: #a0a5b1;
+    display: inline-block;
+    margin: 0 5px;
+}
+table.table td a.view {
+    color: #03A9F4;
+}
+table.table td a.edit {
+    color: #FFC107;
+}
+table.table td a.delete {
+    color: #E34724;
+}
+table.table td i {
+    font-size: 19px;
+}    
+.pagination {
+    float: right;
+    margin: 0 0 5px;
+}
+.pagination li a {
+    border: none;
+    font-size: 13px;
+    min-width: 30px;
+    min-height: 30px;
+    padding: 0 10px;
+    color: #999;
+    margin: 0 2px;
+    line-height: 30px;
+    border-radius: 30px !important;
+    text-align: center;
+}
+.pagination li a:hover {
+    color: #666;
+}	
+.pagination li.active a {
+    background: #03A9F4;
+}
+.pagination li.active a:hover {        
+    background: #0397d6;
+}
+.pagination li.disabled i {
+    color: #ccc;
+}
+.pagination li i {
+    font-size: 16px;
+    padding-top: 6px
+}
+.hint-text {
+    float: left;
+    margin-top: 10px;
+    font-size: 13px;
+}
+&lt;/style&gt;
+&lt;script&gt;
+$(document).ready(function(){
+    $('[data-toggle=&quot;tooltip&quot;]').tooltip();
+    // Animate select box length
+    var searchInput = $(&quot;.search-box input&quot;);
+    var inputGroup = $(&quot;.search-box .input-group&quot;);
+    var boxWidth = inputGroup.width();
+    searchInput.focus(function(){
+        inputGroup.animate({
+            width: &quot;300&quot;
+        });
+    }).blur(function(){
+        inputGroup.animate({
+            width: boxWidth
+        });
+    });
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;table-responsive&quot;&gt;
+        &lt;div class=&quot;table-wrapper&quot;&gt;			
+            &lt;div class=&quot;table-title&quot;&gt;
+                &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;col-xs-4&quot;&gt;
+                        &lt;div class=&quot;show-entries&quot;&gt;
+                            &lt;span&gt;Show&lt;/span&gt;
+                            &lt;select&gt;
+                                &lt;option&gt;5&lt;/option&gt;
+                                &lt;option&gt;10&lt;/option&gt;
+                                &lt;option&gt;15&lt;/option&gt;
+                                &lt;option&gt;20&lt;/option&gt;
+                            &lt;/select&gt;
+                            &lt;span&gt;entries&lt;/span&gt;
+                        &lt;/div&gt;						
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col-xs-4&quot;&gt;
+                        &lt;h2 class=&quot;text-center&quot;&gt;Customer &lt;b&gt;Details&lt;/b&gt;&lt;/h2&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col-xs-4&quot;&gt;
+                        &lt;div class=&quot;search-box&quot;&gt;
+                            &lt;div class=&quot;input-group&quot;&gt;
+                                &lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE8B6;&lt;/i&gt;&lt;/span&gt;
+                                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Search&amp;hellip;&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;table class=&quot;table table-bordered&quot;&gt;
+                &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;#&lt;/th&gt;
+                        &lt;th&gt;Name &lt;i class=&quot;fa fa-sort&quot;&gt;&lt;/i&gt;&lt;/th&gt;
+                        &lt;th&gt;Address&lt;/th&gt;
+                        &lt;th&gt;City &lt;i class=&quot;fa fa-sort&quot;&gt;&lt;/i&gt;&lt;/th&gt;
+                        &lt;th&gt;Pin Code&lt;/th&gt;
+                        &lt;th&gt;Country &lt;i class=&quot;fa fa-sort&quot;&gt;&lt;/i&gt;&lt;/th&gt;
+                        &lt;th&gt;Actions&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;1&lt;/td&gt;
+                        &lt;td&gt;Thomas Hardy&lt;/td&gt;
+                        &lt;td&gt;89 Chiaroscuro Rd.&lt;/td&gt;
+                        &lt;td&gt;Portland&lt;/td&gt;
+                        &lt;td&gt;97219&lt;/td&gt;
+                        &lt;td&gt;USA&lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;view&quot; title=&quot;View&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE417;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;edit&quot; title=&quot;Edit&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE254;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;delete&quot; title=&quot;Delete&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE872;&lt;/i&gt;&lt;/a&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;2&lt;/td&gt;
+                        &lt;td&gt;Maria Anders&lt;/td&gt;
+                        &lt;td&gt;Obere Str. 57&lt;/td&gt;
+                        &lt;td&gt;Berlin&lt;/td&gt;
+                        &lt;td&gt;12209&lt;/td&gt;
+                        &lt;td&gt;Germany&lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;view&quot; title=&quot;View&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE417;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;edit&quot; title=&quot;Edit&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE254;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;delete&quot; title=&quot;Delete&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE872;&lt;/i&gt;&lt;/a&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;3&lt;/td&gt;
+                        &lt;td&gt;Fran Wilson&lt;/td&gt;
+                        &lt;td&gt;C/ Araquil, 67&lt;/td&gt;
+                        &lt;td&gt;Madrid&lt;/td&gt;
+                        &lt;td&gt;28023&lt;/td&gt;
+                        &lt;td&gt;Spain&lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;view&quot; title=&quot;View&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE417;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;edit&quot; title=&quot;Edit&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE254;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;delete&quot; title=&quot;Delete&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE872;&lt;/i&gt;&lt;/a&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;4&lt;/td&gt;
+                        &lt;td&gt;Dominique Perrier&lt;/td&gt;
+                        &lt;td&gt;25, rue Lauriston&lt;/td&gt;
+                        &lt;td&gt;Paris&lt;/td&gt;
+                        &lt;td&gt;75016&lt;/td&gt;
+                        &lt;td&gt;France&lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;view&quot; title=&quot;View&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE417;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;edit&quot; title=&quot;Edit&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE254;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;delete&quot; title=&quot;Delete&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE872;&lt;/i&gt;&lt;/a&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;5&lt;/td&gt;
+                        &lt;td&gt;Martin Blank&lt;/td&gt;
+                        &lt;td&gt;Via Monte Bianco 34&lt;/td&gt;
+                        &lt;td&gt;Turin&lt;/td&gt;
+                        &lt;td&gt;10100&lt;/td&gt;
+                        &lt;td&gt;Italy&lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;view&quot; title=&quot;View&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE417;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;edit&quot; title=&quot;Edit&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE254;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;delete&quot; title=&quot;Delete&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE872;&lt;/i&gt;&lt;/a&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;        
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+            &lt;div class=&quot;clearfix&quot;&gt;
+                &lt;div class=&quot;hint-text&quot;&gt;Showing &lt;b&gt;5&lt;/b&gt; out of &lt;b&gt;25&lt;/b&gt; entries&lt;/div&gt;
+                &lt;ul class=&quot;pagination&quot;&gt;
+                    &lt;li class=&quot;page-item disabled&quot;&gt;&lt;a href=&quot;#&quot;&gt;Previous&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;page-item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;page-link&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;page-item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;page-link&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;page-item active&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;page-link&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;page-item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;page-link&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;page-item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;page-link&quot;&gt;5&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;page-item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;page-link&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;        
+&lt;/div&gt;     
+&lt;/body&gt;
+&lt;/html&gt;</textarea>	
+                                                    <script>
+                            var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+                                mode: "text/html",
+                                tabMode: "indent",
+                                styleActiveLine: true,
+                                lineNumbers: true,
+                                lineWrapping: true
+                            });
+                        </script>									
+                    </div>
+                </div>
+            </div>
+            <div class="pane" id="preview-pane">
+                <div class="outer-wrapper">
+                    <span class="hide-preview-pane">&nbsp;</span>
+                    <div class="output-area">
+                        <iframe id="preview" name="preview"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="code_footer_h">
+    <div class="col inline_icon_h">
+    <img src="assets/images/logo.png" alt="CodeLab" width="25px" /></div>
+        </div>
+    </footer>
+</body>
+
+</html>
+

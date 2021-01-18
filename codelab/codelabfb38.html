@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<title>Live Demo: Handling the Geolocation Errors and Rejections</title>
+	<meta name="description" content="Try and test HTML code online in a simple and easy way using our free HTML editor and see the results in real-time." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+	<link rel="stylesheet" href="./assets/css/codemirror.css" />
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/default-1.2.css" />
+	<script src="./assets/js/jquery.min.js"></script>
+	<script src="./assets/js/codemirror.js"></script>
+	<script src="./assets/js/utility.js"></script>
+	<script src="./assets/js/xml.js"></script>    
+	<link rel="stylesheet" href="./assets/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<script src="./assets/js/clike.js"></script>
+<script src="./assets/js/php.js"></script>
+<script src="./assets/js/css.js"></script>
+<script src="./assets/js/htmlmixed.js"></script>
+<script src="./assets/js/javascript.js"></script>
+<script src="./assets/js/sql.js"></script>
+
+	<script>
+		$(document).ready(function(){
+        	updatePreview();
+    	});    
+	</script>
+</head>
+<body>
+	<div class="main_hw">
+		<div class="header clearfix">
+			<div class="top-ad-box">
+		</div>
+			<div class="logo">
+				<img src="assets/images/logo.png" alt="CodeLab" />
+				<span style="position: relative;font-size: 25px;top: 8px;margin-left:5px"> Code Area </span>
+			</div>
+			<div class="control-bar">
+				<div class="buttons">
+					<a onClick="updatePreview();" class="show-output">preview</a>
+					<a onClick="toggleView();" class="toggle-view" title="Change Editor Layout"><i class="fa fa-retweet" aria-hidden="true"></i>
+</a>
+				</div>                            
+			</div>               
+		</div>
+	</div>
+	<div class="frame-box vr">
+		<div class="pane-wrapper clearfix">
+			<div class="pane" id="code-pane">
+				<div class="outer-area">
+					<span class="show-preview-pane">&nbsp;</span>
+					<div class="inner-area">
+						<input type="hidden" id="current-code" name="current-code" />
+<textarea id="code" name="code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;Handling the Geolocation Errors and Rejections&lt;/title&gt;
+&lt;script&gt;
+	// Set up global variable
+	var result;
+	
+	function showPosition() {
+		// Store the element where the page displays the result
+		result = document.getElementById(&quot;result&quot;);
+		
+		// If geolocation is available, try to get the visitor's position
+		if(navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+			result.innerHTML = &quot;Getting the position information...&quot;;
+		} else {
+			alert(&quot;Sorry, your browser does not support HTML5 geolocation.&quot;);
+		}
+	};
+	
+	// Define callback function for successful attempt
+	function successCallback(position) {
+		result.innerHTML = &quot;Your current position is (&quot; + &quot;Latitude: &quot; + position.coords.latitude + &quot;, &quot; + &quot;Longitude: &quot; + position.coords.longitude + &quot;)&quot;;
+	}
+	
+	// Define callback function for failed attempt
+	function errorCallback(error) {
+		if(error.code == 1) {
+			result.innerHTML = &quot;You've decided not to share your position, but it's OK. We won't ask you again.&quot;;
+		} else if(error.code == 2) {
+			result.innerHTML = &quot;The network is down or the positioning service can't be reached.&quot;;
+		} else if(error.code == 3) {
+			result.innerHTML = &quot;The attempt timed out before it could get the location data.&quot;;
+		} else {
+			result.innerHTML = &quot;Geolocation failed due to unknown error.&quot;;
+		}
+	}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div id=&quot;result&quot;&gt;
+		&lt;!--Position information will be inserted here--&gt;
+	&lt;/div&gt;
+	&lt;button type=&quot;button&quot; onclick=&quot;showPosition();&quot;&gt;Show Position&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+													<script>
+							var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+								mode: "text/html",
+								tabMode: "indent",
+								styleActiveLine: true,
+								lineNumbers: true,
+								lineWrapping: true
+							});
+						</script>									
+					</div>
+				</div>
+			</div>
+			<div class="pane" id="preview-pane">
+				<div class="outer-wrapper">
+					<span class="hide-preview-pane">&nbsp;</span>
+					<div class="output-area">
+						<iframe id="preview" name="preview"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="code_footer_h">
+	<div class="col inline_icon_h">
+	<img src="assets/images/logo.png" alt="CodeLab" width="25px" /></div>
+		</div>
+	</footer>
+</body>
+
+</html>
+

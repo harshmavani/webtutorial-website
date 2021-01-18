@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<title>Live Demo: JavaScript Detect Internet Connection Status</title>
+	<meta name="description" content="Try and test HTML code online in a simple and easy way using our free HTML editor and see the results in real-time." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+	<link rel="stylesheet" href="./assets/css/codemirror.css" />
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/default-1.2.css" />
+	<script src="./assets/js/jquery.min.js"></script>
+	<script src="./assets/js/codemirror.js"></script>
+	<script src="./assets/js/utility.js"></script>
+	<script src="./assets/js/xml.js"></script>    
+	<link rel="stylesheet" href="./assets/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<script src="./assets/js/clike.js"></script>
+<script src="./assets/js/php.js"></script>
+<script src="./assets/js/css.js"></script>
+<script src="./assets/js/htmlmixed.js"></script>
+<script src="./assets/js/javascript.js"></script>
+<script src="./assets/js/sql.js"></script>
+
+	<script>
+		$(document).ready(function(){
+        	updatePreview();
+    	});    
+	</script>
+</head>
+<body>
+	<div class="main_hw">
+		<div class="header clearfix">
+			<div class="top-ad-box">
+		</div>
+			<div class="logo">
+				<img src="assets/images/logo.png" alt="CodeLab" />
+				<span style="position: relative;font-size: 25px;top: 8px;margin-left:5px"> Code Area </span>
+			</div>
+			<div class="control-bar">
+				<div class="buttons">
+					<a onClick="updatePreview();" class="show-output">preview</a>
+					<a onClick="toggleView();" class="toggle-view" title="Change Editor Layout"><i class="fa fa-retweet" aria-hidden="true"></i>
+</a>
+				</div>                            
+			</div>               
+		</div>
+	</div>
+	<div class="frame-box vr">
+		<div class="pane-wrapper clearfix">
+			<div class="pane" id="code-pane">
+				<div class="outer-area">
+					<span class="show-preview-pane">&nbsp;</span>
+					<div class="inner-area">
+						<input type="hidden" id="current-code" name="current-code" />
+<textarea id="code" name="code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;utf-8&quot;&gt;
+	&lt;title&gt;JavaScript Detect Internet Connection Status&lt;/title&gt;
+	&lt;style&gt;
+		body {
+			text-align: center;
+			font-family: &quot;Segoe UI&quot;, Arial, sans-serif;
+		}
+		#status {
+			border: 2px solid;
+			padding: 15px 20px 15px 40px;
+			width: 160px;
+			margin: 0 auto;
+			border-radius: 20px;
+			font-size: 30px;
+			font-weight: bold;
+			text-transform: uppercase;
+			position: relative;
+		}
+		#status.online {
+			color: green;
+		}        
+		#status.offline {
+			color: red;
+		}
+		#status.online::before, #status.offline::before {
+			width: 25px;
+			height: 25px;
+			content: &quot;&quot;;
+			border-radius: 15px;
+			box-shadow: 0 0 8px;
+			position: absolute;
+			left: 20px;
+			top: 25px;
+		}
+		#status.online::before {
+			background: green;
+		}
+		#status.offline::before {
+			background: red;
+		}
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;script&gt;    
+	var hint = document.getElementById(&quot;hint&quot;);
+	
+	// Defining function to update connection status
+	function updateConnectionStatus() {  
+		var status = document.getElementById(&quot;status&quot;);
+		if(navigator.onLine) {
+			status.innerHTML = &quot;Online&quot;;
+			status.classList.add(&quot;online&quot;);
+			status.classList.remove(&quot;offline&quot;);                        
+		} else {
+			status.innerHTML = &quot;Offline&quot;;
+			status.classList.add(&quot;offline&quot;);
+			status.classList.remove(&quot;online&quot;);            
+		}
+	}
+
+	// Attaching event handler for the load event
+	window.addEventListener(&quot;load&quot;, updateConnectionStatus);
+	
+	// Attaching event handler for the online event
+	window.addEventListener(&quot;online&quot;, function(e) {
+		updateConnectionStatus();
+		hint.innerHTML = &quot;And we're back!&quot;;
+	});
+	
+	// Attaching event handler for the offline event
+	window.addEventListener(&quot;offline&quot;, function(e) {        
+		updateConnectionStatus();
+		hint.innerHTML = &quot;Hey, it looks like you're offline.&quot;;
+	});
+	&lt;/script&gt;
+	&lt;div id=&quot;status&quot;&gt;&lt;/div&gt;    
+	&lt;p&gt;Toggle your internet connection on/off to see how it works.&lt;/p&gt;
+	&lt;p id=&quot;hint&quot;&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;                                                        </textarea>
+													<script>
+							var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+								mode: "text/html",
+								tabMode: "indent",
+								styleActiveLine: true,
+								lineNumbers: true,
+								lineWrapping: true
+							});
+						</script>									
+					</div>
+				</div>
+			</div>
+			<div class="pane" id="preview-pane">
+				<div class="outer-wrapper">
+					<span class="hide-preview-pane">&nbsp;</span>
+					<div class="output-area">
+						<iframe id="preview" name="preview"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="code_footer_h">
+	<div class="col inline_icon_h">
+	<img src="assets/images/logo.png" alt="CodeLab" width="25px" /></div>
+		</div>
+	</footer>
+</body>
+
+</html>
+
+
+
+

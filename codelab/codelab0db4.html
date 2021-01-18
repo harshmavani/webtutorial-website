@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<title>Live Demo: Bootstrap Table with Add and Delete Row Feature</title>
+	<meta name="description" content="Try and test HTML code online in a simple and easy way using our free HTML editor and see the results in real-time." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+	<link rel="stylesheet" href="./assets/css/codemirror.css" />
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/default-1.2.css" />
+	<script src="./assets/js/jquery.min.js"></script>
+	<script src="./assets/js/codemirror.js"></script>
+	<script src="./assets/js/utility.js"></script>
+	<script src="./assets/js/xml.js"></script>    
+	<link rel="stylesheet" href="./assets/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<script src="./assets/js/clike.js"></script>
+<script src="./assets/js/php.js"></script>
+<script src="./assets/js/css.js"></script>
+<script src="./assets/js/htmlmixed.js"></script>
+<script src="./assets/js/javascript.js"></script>
+<script src="./assets/js/sql.js"></script>
+
+	<script>
+		$(document).ready(function(){
+        	updatePreview();
+    	});    
+	</script>
+</head>
+<body>
+	<div class="main_hw">
+		<div class="header clearfix">
+			<div class="top-ad-box">
+		</div>
+			<div class="logo">
+				<img src="assets/images/logo.png" alt="CodeLab" />
+				<span style="position: relative;font-size: 25px;top: 8px;margin-left:5px"> Code Area </span>
+			</div>
+			<div class="control-bar">
+				<div class="buttons">
+					<a onClick="updatePreview();" class="show-output">preview</a>
+					<a onClick="toggleView();" class="toggle-view" title="Change Editor Layout"><i class="fa fa-retweet" aria-hidden="true"></i>
+</a>
+				</div>                            
+			</div>               
+		</div>
+	</div>
+	<div class="frame-box vr">
+		<div class="pane-wrapper clearfix">
+			<div class="pane" id="code-pane">
+				<div class="outer-area">
+					<span class="show-preview-pane">&nbsp;</span>
+					<div class="inner-area">
+						<input type="hidden" id="current-code" name="current-code" />
+<textarea id="code" name="code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;title&gt;Bootstrap Table with Add and Delete Row Feature&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;style&gt;
+	body {
+		color: #404E67;
+		background: #F5F7FA;
+		font-family: 'Open Sans', sans-serif;
+	}
+	.table-wrapper {
+		width: 700px;
+		margin: 30px auto;
+		background: #fff;
+		padding: 20px;	
+		box-shadow: 0 1px 1px rgba(0,0,0,.05);
+	}
+	.table-title {
+		padding-bottom: 10px;
+		margin: 0 0 10px;
+	}
+	.table-title h2 {
+		margin: 6px 0 0;
+		font-size: 22px;
+	}
+	.table-title .add-new {
+		float: right;
+		height: 30px;
+		font-weight: bold;
+		font-size: 12px;
+		text-shadow: none;
+		min-width: 100px;
+		border-radius: 50px;
+		line-height: 13px;
+	}
+	.table-title .add-new i {
+		margin-right: 4px;
+	}
+	table.table {
+		table-layout: fixed;
+	}
+	table.table tr th, table.table tr td {
+		border-color: #e9e9e9;
+	}
+	table.table th i {
+		font-size: 13px;
+		margin: 0 5px;
+		cursor: pointer;
+	}
+	table.table th:last-child {
+		width: 100px;
+	}
+	table.table td a {
+		cursor: pointer;
+		display: inline-block;
+		margin: 0 5px;
+		min-width: 24px;
+	}    
+	table.table td a.add {
+		color: #27C46B;
+	}
+	table.table td a.edit {
+		color: #FFC107;
+	}
+	table.table td a.delete {
+		color: #E34724;
+	}
+	table.table td i {
+		font-size: 19px;
+	}
+	table.table td a.add i {
+		font-size: 24px;
+		margin-right: -1px;
+		position: relative;
+		top: 3px;
+	}    
+	table.table .form-control {
+		height: 32px;
+		line-height: 32px;
+		box-shadow: none;
+		border-radius: 2px;
+	}
+	table.table .form-control.error {
+		border-color: #f50000;
+	}
+	table.table td .add {
+		display: none;
+	}
+&lt;/style&gt;
+&lt;script&gt;
+$(document).ready(function(){
+	$('[data-toggle=&quot;tooltip&quot;]').tooltip();
+	var actions = $(&quot;table td:last-child&quot;).html();
+	// Append table with add row form on add new button click
+	$(&quot;.add-new&quot;).click(function(){
+		$(this).attr(&quot;disabled&quot;, &quot;disabled&quot;);
+		var index = $(&quot;table tbody tr:last-child&quot;).index();
+		var row = '&lt;tr&gt;' +
+			'&lt;td&gt;&lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;name&quot; id=&quot;name&quot;&gt;&lt;/td&gt;' +
+			'&lt;td&gt;&lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;department&quot; id=&quot;department&quot;&gt;&lt;/td&gt;' +
+			'&lt;td&gt;&lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;phone&quot; id=&quot;phone&quot;&gt;&lt;/td&gt;' +
+			'&lt;td&gt;' + actions + '&lt;/td&gt;' +
+		'&lt;/tr&gt;';
+		$(&quot;table&quot;).append(row);		
+		$(&quot;table tbody tr&quot;).eq(index + 1).find(&quot;.add, .edit&quot;).toggle();
+		$('[data-toggle=&quot;tooltip&quot;]').tooltip();
+	});
+	// Add row on add button click
+	$(document).on(&quot;click&quot;, &quot;.add&quot;, function(){
+		var empty = false;
+		var input = $(this).parents(&quot;tr&quot;).find('input[type=&quot;text&quot;]');
+		input.each(function(){
+			if(!$(this).val()){
+				$(this).addClass(&quot;error&quot;);
+				empty = true;
+			} else{
+				$(this).removeClass(&quot;error&quot;);
+			}
+		});
+		$(this).parents(&quot;tr&quot;).find(&quot;.error&quot;).first().focus();
+		if(!empty){
+			input.each(function(){
+				$(this).parent(&quot;td&quot;).html($(this).val());
+			});			
+			$(this).parents(&quot;tr&quot;).find(&quot;.add, .edit&quot;).toggle();
+			$(&quot;.add-new&quot;).removeAttr(&quot;disabled&quot;);
+		}		
+	});
+	// Edit row on edit button click
+	$(document).on(&quot;click&quot;, &quot;.edit&quot;, function(){		
+		$(this).parents(&quot;tr&quot;).find(&quot;td:not(:last-child)&quot;).each(function(){
+			$(this).html('&lt;input type=&quot;text&quot; class=&quot;form-control&quot; value=&quot;' + $(this).text() + '&quot;&gt;');
+		});		
+		$(this).parents(&quot;tr&quot;).find(&quot;.add, .edit&quot;).toggle();
+		$(&quot;.add-new&quot;).attr(&quot;disabled&quot;, &quot;disabled&quot;);
+	});
+	// Delete row on delete button click
+	$(document).on(&quot;click&quot;, &quot;.delete&quot;, function(){
+		$(this).parents(&quot;tr&quot;).remove();
+		$(&quot;.add-new&quot;).removeAttr(&quot;disabled&quot;);
+	});
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;div class=&quot;table-wrapper&quot;&gt;
+			&lt;div class=&quot;table-title&quot;&gt;
+				&lt;div class=&quot;row&quot;&gt;
+					&lt;div class=&quot;col-sm-8&quot;&gt;&lt;h2&gt;Employee &lt;b&gt;Details&lt;/b&gt;&lt;/h2&gt;&lt;/div&gt;
+					&lt;div class=&quot;col-sm-4&quot;&gt;
+						&lt;button type=&quot;button&quot; class=&quot;btn btn-info add-new&quot;&gt;&lt;i class=&quot;fa fa-plus&quot;&gt;&lt;/i&gt; Add New&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;table class=&quot;table table-bordered&quot;&gt;
+				&lt;thead&gt;
+					&lt;tr&gt;
+						&lt;th&gt;Name&lt;/th&gt;
+						&lt;th&gt;Department&lt;/th&gt;
+						&lt;th&gt;Phone&lt;/th&gt;
+						&lt;th&gt;Actions&lt;/th&gt;
+					&lt;/tr&gt;
+				&lt;/thead&gt;
+				&lt;tbody&gt;
+					&lt;tr&gt;
+						&lt;td&gt;John Doe&lt;/td&gt;
+						&lt;td&gt;Administration&lt;/td&gt;
+						&lt;td&gt;(171) 555-2222&lt;/td&gt;
+						&lt;td&gt;
+							&lt;a class=&quot;add&quot; title=&quot;Add&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE03B;&lt;/i&gt;&lt;/a&gt;
+							&lt;a class=&quot;edit&quot; title=&quot;Edit&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE254;&lt;/i&gt;&lt;/a&gt;
+							&lt;a class=&quot;delete&quot; title=&quot;Delete&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE872;&lt;/i&gt;&lt;/a&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td&gt;Peter Parker&lt;/td&gt;
+						&lt;td&gt;Customer Service&lt;/td&gt;
+						&lt;td&gt;(313) 555-5735&lt;/td&gt;
+						&lt;td&gt;
+							&lt;a class=&quot;add&quot; title=&quot;Add&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE03B;&lt;/i&gt;&lt;/a&gt;
+							&lt;a class=&quot;edit&quot; title=&quot;Edit&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE254;&lt;/i&gt;&lt;/a&gt;
+							&lt;a class=&quot;delete&quot; title=&quot;Delete&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE872;&lt;/i&gt;&lt;/a&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td&gt;Fran Wilson&lt;/td&gt;
+						&lt;td&gt;Human Resources&lt;/td&gt;
+						&lt;td&gt;(503) 555-9931&lt;/td&gt;
+						&lt;td&gt;
+							&lt;a class=&quot;add&quot; title=&quot;Add&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE03B;&lt;/i&gt;&lt;/a&gt;
+							&lt;a class=&quot;edit&quot; title=&quot;Edit&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE254;&lt;/i&gt;&lt;/a&gt;
+							&lt;a class=&quot;delete&quot; title=&quot;Delete&quot; data-toggle=&quot;tooltip&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE872;&lt;/i&gt;&lt;/a&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;      
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;     
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+													<script>
+							var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+								mode: "text/html",
+								tabMode: "indent",
+								styleActiveLine: true,
+								lineNumbers: true,
+								lineWrapping: true
+							});
+						</script>									
+					</div>
+				</div>
+			</div>
+			<div class="pane" id="preview-pane">
+				<div class="outer-wrapper">
+					<span class="hide-preview-pane">&nbsp;</span>
+					<div class="output-area">
+						<iframe id="preview" name="preview"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="code_footer_h">
+	<div class="col inline_icon_h">
+	<img src="assets/images/logo.png" alt="CodeLab" width="25px" /></div>
+		</div>
+	</footer>
+</body>
+
+</html>
+
+
+
+

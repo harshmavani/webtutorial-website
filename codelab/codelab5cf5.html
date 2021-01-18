@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<title>Live Demo: Bootstrap Sign in Form with Circular Social Buttons</title>
+	<meta name="description" content="Try and test HTML code online in a simple and easy way using our free HTML editor and see the results in real-time." />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+	<link rel="stylesheet" href="./assets/css/codemirror.css" />
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/default-1.2.css" />
+	<script src="./assets/js/jquery.min.js"></script>
+	<script src="./assets/js/codemirror.js"></script>
+	<script src="./assets/js/utility.js"></script>
+	<script src="./assets/js/xml.js"></script>    
+	<link rel="stylesheet" href="./assets/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<script src="./assets/js/clike.js"></script>
+<script src="./assets/js/php.js"></script>
+<script src="./assets/js/css.js"></script>
+<script src="./assets/js/htmlmixed.js"></script>
+<script src="./assets/js/javascript.js"></script>
+<script src="./assets/js/sql.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			updatePreview();
+		});    
+	</script>
+</head>
+<body>
+	<div class="main_hw">
+		<div class="header clearfix">
+			<div class="top-ad-box">
+		</div>
+			<div class="logo">
+				<img src="assets/images/logo.png" alt="CodeLab" />
+				<span style="position: relative;font-size: 25px;top: 8px;margin-left:5px"> Code Area </span>
+			</div>
+			<div class="control-bar">
+				<div class="buttons">
+					<a onClick="updatePreview();" class="show-output">preview</a>
+					<a onClick="toggleView();" class="toggle-view" title="Change Editor Layout"><i class="fa fa-retweet" aria-hidden="true"></i>
+</a>
+				</div>                            
+			</div>               
+		</div>
+	</div>
+	<div class="frame-box vr">
+		<div class="pane-wrapper clearfix">
+			<div class="pane" id="code-pane">
+				<div class="outer-area">
+					<span class="show-preview-pane">&nbsp;</span>
+					<div class="inner-area">
+						<input type="hidden" id="current-code" name="current-code" />
+<textarea id="code" name="code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+&lt;title&gt;Bootstrap Sign in Form with Circular Social Buttons&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto|Varela+Round&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot;&gt;
+&lt;script src=&quot;https://code.jquery.com/jquery-3.5.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;style&gt;
+body {
+	color: #434343;
+	background: #dfe7e9;
+	font-family: 'Varela Round', sans-serif;
+}
+.form-control {
+	font-size: 16px;
+	transition: all 0.4s;
+	box-shadow: none;
+}
+.form-control:focus {
+	border-color: #5cb85c;
+}
+.form-control, .btn {
+	border-radius: 50px;
+	outline: none !important;
+}
+.signin-form {
+	width: 400px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+.signin-form form {
+	border-radius: 5px;
+	margin-bottom: 20px;
+	background: #fff;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 40px;
+}
+.signin-form a {
+	color: #5cb85c;
+}    
+.signin-form h2 {
+	text-align: center;
+	font-size: 34px;
+	margin: 10px 0 15px;
+}
+.signin-form .hint-text {
+	color: #999;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.signin-form .form-group {
+	margin-bottom: 20px;
+}
+.signin-form .btn {        
+	font-size: 18px;
+	line-height: 26px;        
+	font-weight: bold;
+	text-align: center;
+}
+.signin-form .small {
+	font-size: 13px;
+}
+.signin-btn {
+	text-align: center;
+	border-color: #5cb85c;
+	transition: all 0.4s;
+}
+.signin-btn:hover {
+	background: #5cb85c;
+	opacity: 0.8;
+}
+.or-seperator {
+	margin: 50px 0 15px;
+	text-align: center;
+	border-top: 1px solid #e0e0e0;
+}
+.or-seperator b {
+	padding: 0 10px;
+	width: 40px;
+	height: 40px;
+	font-size: 16px;
+	text-align: center;
+	line-height: 40px;
+	background: #fff;
+	display: inline-block;
+	border: 1px solid #e0e0e0;
+	border-radius: 50%;
+	position: relative;
+	top: -22px;
+	z-index: 1;
+}
+.social-btn .btn {
+	color: #fff;
+	margin: 10px 0 0 30px;
+	font-size: 15px;
+	width: 55px;
+	height: 55px;
+	line-height: 45px;
+	border-radius: 50%;
+	font-weight: normal;
+	text-align: center;
+	border: none;
+	transition: all 0.4s;
+}	
+.social-btn .btn:first-child {
+	margin-left: 0;
+}
+.social-btn .btn:hover {
+	opacity: 0.8;
+}
+.social-btn .btn-primary {
+	background: #507cc0;
+}
+.social-btn .btn-info {
+	background: #64ccf1;
+}
+.social-btn .btn-danger {
+	background: #df4930;
+}
+.social-btn .btn i {
+	font-size: 20px;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;signin-form&quot;&gt;
+	&lt;form action=&quot;/output_file/actions/confirmation.php&quot; method=&quot;post&quot;&gt;
+		&lt;h2&gt;Sign in&lt;/h2&gt;
+		&lt;p class=&quot;hint-text&quot;&gt;Sign in with your social media account&lt;/p&gt;
+		&lt;div class=&quot;social-btn text-center&quot;&gt;
+			&lt;a href=&quot;#&quot; class=&quot;btn btn-primary btn-lg&quot; title=&quot;Facebook&quot;&gt;&lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+			&lt;a href=&quot;#&quot; class=&quot;btn btn-info btn-lg&quot; title=&quot;Twitter&quot;&gt;&lt;i class=&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+			&lt;a href=&quot;#&quot; class=&quot;btn btn-danger btn-lg&quot; title=&quot;Google&quot;&gt;&lt;i class=&quot;fa fa-google&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;or-seperator&quot;&gt;&lt;b&gt;or&lt;/b&gt;&lt;/div&gt;
+		&lt;div class=&quot;form-group&quot;&gt;
+			&lt;input type=&quot;text&quot; class=&quot;form-control input-lg&quot; name=&quot;username&quot; placeholder=&quot;Username&quot; required=&quot;required&quot;&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;form-group&quot;&gt;
+			&lt;input type=&quot;password&quot; class=&quot;form-control input-lg&quot; name=&quot;password&quot; placeholder=&quot;Password&quot; required=&quot;required&quot;&gt;
+		&lt;/div&gt;  
+		&lt;div class=&quot;form-group&quot;&gt;
+			&lt;button type=&quot;submit&quot; class=&quot;btn btn-success btn-lg btn-block signin-btn&quot;&gt;Sign in&lt;/button&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;text-center small&quot;&gt;&lt;a href=&quot;#&quot;&gt;Forgot Your password?&lt;/a&gt;&lt;/div&gt;
+	&lt;/form&gt;
+	&lt;div class=&quot;text-center small&quot;&gt;Don't have an account? &lt;a href=&quot;#&quot;&gt;Sign up&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>	
+													<script>
+							var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+								mode: "text/html",
+								tabMode: "indent",
+								styleActiveLine: true,
+								lineNumbers: true,
+								lineWrapping: true
+							});
+						</script>									
+					</div>
+				</div>
+			</div>
+			<div class="pane" id="preview-pane">
+				<div class="outer-wrapper">
+					<span class="hide-preview-pane">&nbsp;</span>
+					<div class="output-area">
+						<iframe id="preview" name="preview"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="code_footer_h">
+	<div class="col inline_icon_h">
+	<img src="assets/images/logo.png" alt="CodeLab" width="25px" /></div>
+		</div>
+	</footer>
+</body>
+
+</html>
+

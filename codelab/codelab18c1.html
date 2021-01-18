@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<title>Live Demo: Bootstrap CRUD Data Table for Database with Modal Form</title>
+	<meta name="description" content="Try and test HTML code online in a simple and easy way using our free HTML editor and see the results in real-time." />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+	<link rel="stylesheet" href="./assets/css/codemirror.css" />
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/default-1.2.css" />
+	<script src="./assets/js/jquery.min.js"></script>
+	<script src="./assets/js/codemirror.js"></script>
+	<script src="./assets/js/utility.js"></script>
+	<script src="./assets/js/xml.js"></script>    
+	<link rel="stylesheet" href="./assets/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<script src="./assets/js/clike.js"></script>
+<script src="./assets/js/php.js"></script>
+<script src="./assets/js/css.js"></script>
+<script src="./assets/js/htmlmixed.js"></script>
+<script src="./assets/js/javascript.js"></script>
+<script src="./assets/js/sql.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			updatePreview();
+		});    
+	</script>
+</head>
+<body>
+	<div class="main_hw">
+		<div class="header clearfix">
+			<div class="top-ad-box">
+		</div>
+			<div class="logo">
+				<img src="assets/images/logo.png" alt="CodeLab" />
+				<span style="position: relative;font-size: 25px;top: 8px;margin-left:5px"> Code Area </span>
+			</div>
+			<div class="control-bar">
+				<div class="buttons">
+					<a onClick="updatePreview();" class="show-output">preview</a>
+					<a onClick="toggleView();" class="toggle-view" title="Change Editor Layout"><i class="fa fa-retweet" aria-hidden="true"></i>
+</a>
+				</div>                            
+			</div>               
+		</div>
+	</div>
+	<div class="frame-box vr">
+		<div class="pane-wrapper clearfix">
+			<div class="pane" id="code-pane">
+				<div class="outer-area">
+					<span class="show-preview-pane">&nbsp;</span>
+					<div class="inner-area">
+						<input type="hidden" id="current-code" name="current-code" />
+<textarea id="code" name="code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+&lt;title&gt;Bootstrap CRUD Data Table for Database with Modal Form&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto|Varela+Round&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot;&gt;
+&lt;script src=&quot;https://code.jquery.com/jquery-3.5.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;style&gt;
+body {
+	color: #566787;
+	background: #f5f5f5;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 13px;
+}
+.table-responsive {
+	margin: 30px 0;
+}
+.table-wrapper {
+	background: #fff;
+	padding: 20px 25px;
+	border-radius: 3px;
+	min-width: 1000px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-title {        
+	padding-bottom: 15px;
+	background: #435d7d;
+	color: #fff;
+	padding: 16px 30px;
+	min-width: 100%;
+	margin: -20px -25px 10px;
+	border-radius: 3px 3px 0 0;
+}
+.table-title h2 {
+	margin: 5px 0 0;
+	font-size: 24px;
+}
+.table-title .btn-group {
+	float: right;
+}
+.table-title .btn {
+	color: #fff;
+	float: right;
+	font-size: 13px;
+	border: none;
+	min-width: 50px;
+	border-radius: 2px;
+	border: none;
+	outline: none !important;
+	margin-left: 10px;
+}
+.table-title .btn i {
+	float: left;
+	font-size: 21px;
+	margin-right: 5px;
+}
+.table-title .btn span {
+	float: left;
+	margin-top: 2px;
+}
+table.table tr th, table.table tr td {
+	border-color: #e9e9e9;
+	padding: 12px 15px;
+	vertical-align: middle;
+}
+table.table tr th:first-child {
+	width: 60px;
+}
+table.table tr th:last-child {
+	width: 100px;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+	background-color: #fcfcfc;
+}
+table.table-striped.table-hover tbody tr:hover {
+	background: #f5f5f5;
+}
+table.table th i {
+	font-size: 13px;
+	margin: 0 5px;
+	cursor: pointer;
+}	
+table.table td:last-child i {
+	opacity: 0.9;
+	font-size: 22px;
+	margin: 0 5px;
+}
+table.table td a {
+	font-weight: bold;
+	color: #566787;
+	display: inline-block;
+	text-decoration: none;
+	outline: none !important;
+}
+table.table td a:hover {
+	color: #2196F3;
+}
+table.table td a.edit {
+	color: #FFC107;
+}
+table.table td a.delete {
+	color: #F44336;
+}
+table.table td i {
+	font-size: 19px;
+}
+table.table .avatar {
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.pagination {
+	float: right;
+	margin: 0 0 5px;
+}
+.pagination li a {
+	border: none;
+	font-size: 13px;
+	min-width: 30px;
+	min-height: 30px;
+	color: #999;
+	margin: 0 2px;
+	line-height: 30px;
+	border-radius: 2px !important;
+	text-align: center;
+	padding: 0 6px;
+}
+.pagination li a:hover {
+	color: #666;
+}	
+.pagination li.active a, .pagination li.active a.page-link {
+	background: #03A9F4;
+}
+.pagination li.active a:hover {        
+	background: #0397d6;
+}
+.pagination li.disabled i {
+	color: #ccc;
+}
+.pagination li i {
+	font-size: 16px;
+	padding-top: 6px
+}
+.hint-text {
+	float: left;
+	margin-top: 10px;
+	font-size: 13px;
+}    
+/* Custom checkbox */
+.custom-checkbox {
+	position: relative;
+}
+.custom-checkbox input[type=&quot;checkbox&quot;] {    
+	opacity: 0;
+	position: absolute;
+	margin: 5px 0 0 3px;
+	z-index: 9;
+}
+.custom-checkbox label:before{
+	width: 18px;
+	height: 18px;
+}
+.custom-checkbox label:before {
+	content: '';
+	margin-right: 10px;
+	display: inline-block;
+	vertical-align: text-top;
+	background: white;
+	border: 1px solid #bbb;
+	border-radius: 2px;
+	box-sizing: border-box;
+	z-index: 2;
+}
+.custom-checkbox input[type=&quot;checkbox&quot;]:checked + label:after {
+	content: '';
+	position: absolute;
+	left: 6px;
+	top: 3px;
+	width: 6px;
+	height: 11px;
+	border: solid #000;
+	border-width: 0 3px 3px 0;
+	transform: inherit;
+	z-index: 3;
+	transform: rotateZ(45deg);
+}
+.custom-checkbox input[type=&quot;checkbox&quot;]:checked + label:before {
+	border-color: #03A9F4;
+	background: #03A9F4;
+}
+.custom-checkbox input[type=&quot;checkbox&quot;]:checked + label:after {
+	border-color: #fff;
+}
+.custom-checkbox input[type=&quot;checkbox&quot;]:disabled + label:before {
+	color: #b8b8b8;
+	cursor: auto;
+	box-shadow: none;
+	background: #ddd;
+}
+/* Modal styles */
+.modal .modal-dialog {
+	max-width: 400px;
+}
+.modal .modal-header, .modal .modal-body, .modal .modal-footer {
+	padding: 20px 30px;
+}
+.modal .modal-content {
+	border-radius: 3px;
+	font-size: 14px;
+}
+.modal .modal-footer {
+	background: #ecf0f1;
+	border-radius: 0 0 3px 3px;
+}
+.modal .modal-title {
+	display: inline-block;
+}
+.modal .form-control {
+	border-radius: 2px;
+	box-shadow: none;
+	border-color: #dddddd;
+}
+.modal textarea.form-control {
+	resize: vertical;
+}
+.modal .btn {
+	border-radius: 2px;
+	min-width: 100px;
+}	
+.modal form label {
+	font-weight: normal;
+}	
+&lt;/style&gt;
+&lt;script&gt;
+$(document).ready(function(){
+	// Activate tooltip
+	$('[data-toggle=&quot;tooltip&quot;]').tooltip();
+	
+	// Select/Deselect checkboxes
+	var checkbox = $('table tbody input[type=&quot;checkbox&quot;]');
+	$(&quot;#selectAll&quot;).click(function(){
+		if(this.checked){
+			checkbox.each(function(){
+				this.checked = true;                        
+			});
+		} else{
+			checkbox.each(function(){
+				this.checked = false;                        
+			});
+		} 
+	});
+	checkbox.click(function(){
+		if(!this.checked){
+			$(&quot;#selectAll&quot;).prop(&quot;checked&quot;, false);
+		}
+	});
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;container-xl&quot;&gt;
+	&lt;div class=&quot;table-responsive&quot;&gt;
+		&lt;div class=&quot;table-wrapper&quot;&gt;
+			&lt;div class=&quot;table-title&quot;&gt;
+				&lt;div class=&quot;row&quot;&gt;
+					&lt;div class=&quot;col-sm-6&quot;&gt;
+						&lt;h2&gt;Manage &lt;b&gt;Employees&lt;/b&gt;&lt;/h2&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;col-sm-6&quot;&gt;
+						&lt;a href=&quot;#addEmployeeModal&quot; class=&quot;btn btn-success&quot; data-toggle=&quot;modal&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE147;&lt;/i&gt; &lt;span&gt;Add New Employee&lt;/span&gt;&lt;/a&gt;
+						&lt;a href=&quot;#deleteEmployeeModal&quot; class=&quot;btn btn-danger&quot; data-toggle=&quot;modal&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE15C;&lt;/i&gt; &lt;span&gt;Delete&lt;/span&gt;&lt;/a&gt;						
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;table class=&quot;table table-striped table-hover&quot;&gt;
+				&lt;thead&gt;
+					&lt;tr&gt;
+						&lt;th&gt;
+							&lt;span class=&quot;custom-checkbox&quot;&gt;
+								&lt;input type=&quot;checkbox&quot; id=&quot;selectAll&quot;&gt;
+								&lt;label for=&quot;selectAll&quot;&gt;&lt;/label&gt;
+							&lt;/span&gt;
+						&lt;/th&gt;
+						&lt;th&gt;Name&lt;/th&gt;
+						&lt;th&gt;Email&lt;/th&gt;
+						&lt;th&gt;Address&lt;/th&gt;
+						&lt;th&gt;Phone&lt;/th&gt;
+						&lt;th&gt;Actions&lt;/th&gt;
+					&lt;/tr&gt;
+				&lt;/thead&gt;
+				&lt;tbody&gt;
+					&lt;tr&gt;
+						&lt;td&gt;
+							&lt;span class=&quot;custom-checkbox&quot;&gt;
+								&lt;input type=&quot;checkbox&quot; id=&quot;checkbox1&quot; name=&quot;options[]&quot; value=&quot;1&quot;&gt;
+								&lt;label for=&quot;checkbox1&quot;&gt;&lt;/label&gt;
+							&lt;/span&gt;
+						&lt;/td&gt;
+						&lt;td&gt;Thomas Hardy&lt;/td&gt;
+						&lt;td&gt;thomashardy@mail.com&lt;/td&gt;
+						&lt;td&gt;89 Chiaroscuro Rd, Portland, USA&lt;/td&gt;
+						&lt;td&gt;(171) 555-2222&lt;/td&gt;
+						&lt;td&gt;
+							&lt;a href=&quot;#editEmployeeModal&quot; class=&quot;edit&quot; data-toggle=&quot;modal&quot;&gt;&lt;i class=&quot;material-icons&quot; data-toggle=&quot;tooltip&quot; title=&quot;Edit&quot;&gt;&amp;#xE254;&lt;/i&gt;&lt;/a&gt;
+							&lt;a href=&quot;#deleteEmployeeModal&quot; class=&quot;delete&quot; data-toggle=&quot;modal&quot;&gt;&lt;i class=&quot;material-icons&quot; data-toggle=&quot;tooltip&quot; title=&quot;Delete&quot;&gt;&amp;#xE872;&lt;/i&gt;&lt;/a&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td&gt;
+							&lt;span class=&quot;custom-checkbox&quot;&gt;
+								&lt;input type=&quot;checkbox&quot; id=&quot;checkbox2&quot; name=&quot;options[]&quot; value=&quot;1&quot;&gt;
+								&lt;label for=&quot;checkbox2&quot;&gt;&lt;/label&gt;
+							&lt;/span&gt;
+						&lt;/td&gt;
+						&lt;td&gt;Dominique Perrier&lt;/td&gt;
+						&lt;td&gt;dominiqueperrier@mail.com&lt;/td&gt;
+						&lt;td&gt;Obere Str. 57, Berlin, Germany&lt;/td&gt;
+						&lt;td&gt;(313) 555-5735&lt;/td&gt;
+						&lt;td&gt;
+							&lt;a href=&quot;#editEmployeeModal&quot; class=&quot;edit&quot; data-toggle=&quot;modal&quot;&gt;&lt;i class=&quot;material-icons&quot; data-toggle=&quot;tooltip&quot; title=&quot;Edit&quot;&gt;&amp;#xE254;&lt;/i&gt;&lt;/a&gt;
+							&lt;a href=&quot;#deleteEmployeeModal&quot; class=&quot;delete&quot; data-toggle=&quot;modal&quot;&gt;&lt;i class=&quot;material-icons&quot; data-toggle=&quot;tooltip&quot; title=&quot;Delete&quot;&gt;&amp;#xE872;&lt;/i&gt;&lt;/a&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td&gt;
+							&lt;span class=&quot;custom-checkbox&quot;&gt;
+								&lt;input type=&quot;checkbox&quot; id=&quot;checkbox3&quot; name=&quot;options[]&quot; value=&quot;1&quot;&gt;
+								&lt;label for=&quot;checkbox3&quot;&gt;&lt;/label&gt;
+							&lt;/span&gt;
+						&lt;/td&gt;
+						&lt;td&gt;Maria Anders&lt;/td&gt;
+						&lt;td&gt;mariaanders@mail.com&lt;/td&gt;
+						&lt;td&gt;25, rue Lauriston, Paris, France&lt;/td&gt;
+						&lt;td&gt;(503) 555-9931&lt;/td&gt;
+						&lt;td&gt;
+							&lt;a href=&quot;#editEmployeeModal&quot; class=&quot;edit&quot; data-toggle=&quot;modal&quot;&gt;&lt;i class=&quot;material-icons&quot; data-toggle=&quot;tooltip&quot; title=&quot;Edit&quot;&gt;&amp;#xE254;&lt;/i&gt;&lt;/a&gt;
+							&lt;a href=&quot;#deleteEmployeeModal&quot; class=&quot;delete&quot; data-toggle=&quot;modal&quot;&gt;&lt;i class=&quot;material-icons&quot; data-toggle=&quot;tooltip&quot; title=&quot;Delete&quot;&gt;&amp;#xE872;&lt;/i&gt;&lt;/a&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td&gt;
+							&lt;span class=&quot;custom-checkbox&quot;&gt;
+								&lt;input type=&quot;checkbox&quot; id=&quot;checkbox4&quot; name=&quot;options[]&quot; value=&quot;1&quot;&gt;
+								&lt;label for=&quot;checkbox4&quot;&gt;&lt;/label&gt;
+							&lt;/span&gt;
+						&lt;/td&gt;
+						&lt;td&gt;Fran Wilson&lt;/td&gt;
+						&lt;td&gt;franwilson@mail.com&lt;/td&gt;
+						&lt;td&gt;C/ Araquil, 67, Madrid, Spain&lt;/td&gt;
+						&lt;td&gt;(204) 619-5731&lt;/td&gt;
+						&lt;td&gt;
+							&lt;a href=&quot;#editEmployeeModal&quot; class=&quot;edit&quot; data-toggle=&quot;modal&quot;&gt;&lt;i class=&quot;material-icons&quot; data-toggle=&quot;tooltip&quot; title=&quot;Edit&quot;&gt;&amp;#xE254;&lt;/i&gt;&lt;/a&gt;
+							&lt;a href=&quot;#deleteEmployeeModal&quot; class=&quot;delete&quot; data-toggle=&quot;modal&quot;&gt;&lt;i class=&quot;material-icons&quot; data-toggle=&quot;tooltip&quot; title=&quot;Delete&quot;&gt;&amp;#xE872;&lt;/i&gt;&lt;/a&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;					
+					&lt;tr&gt;
+						&lt;td&gt;
+							&lt;span class=&quot;custom-checkbox&quot;&gt;
+								&lt;input type=&quot;checkbox&quot; id=&quot;checkbox5&quot; name=&quot;options[]&quot; value=&quot;1&quot;&gt;
+								&lt;label for=&quot;checkbox5&quot;&gt;&lt;/label&gt;
+							&lt;/span&gt;
+						&lt;/td&gt;
+						&lt;td&gt;Martin Blank&lt;/td&gt;
+						&lt;td&gt;martinblank@mail.com&lt;/td&gt;
+						&lt;td&gt;Via Monte Bianco 34, Turin, Italy&lt;/td&gt;
+						&lt;td&gt;(480) 631-2097&lt;/td&gt;
+						&lt;td&gt;
+							&lt;a href=&quot;#editEmployeeModal&quot; class=&quot;edit&quot; data-toggle=&quot;modal&quot;&gt;&lt;i class=&quot;material-icons&quot; data-toggle=&quot;tooltip&quot; title=&quot;Edit&quot;&gt;&amp;#xE254;&lt;/i&gt;&lt;/a&gt;
+							&lt;a href=&quot;#deleteEmployeeModal&quot; class=&quot;delete&quot; data-toggle=&quot;modal&quot;&gt;&lt;i class=&quot;material-icons&quot; data-toggle=&quot;tooltip&quot; title=&quot;Delete&quot;&gt;&amp;#xE872;&lt;/i&gt;&lt;/a&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt; 
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+			&lt;div class=&quot;clearfix&quot;&gt;
+				&lt;div class=&quot;hint-text&quot;&gt;Showing &lt;b&gt;5&lt;/b&gt; out of &lt;b&gt;25&lt;/b&gt; entries&lt;/div&gt;
+				&lt;ul class=&quot;pagination&quot;&gt;
+					&lt;li class=&quot;page-item disabled&quot;&gt;&lt;a href=&quot;#&quot;&gt;Previous&lt;/a&gt;&lt;/li&gt;
+					&lt;li class=&quot;page-item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;page-link&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+					&lt;li class=&quot;page-item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;page-link&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+					&lt;li class=&quot;page-item active&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;page-link&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+					&lt;li class=&quot;page-item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;page-link&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
+					&lt;li class=&quot;page-item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;page-link&quot;&gt;5&lt;/a&gt;&lt;/li&gt;
+					&lt;li class=&quot;page-item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;page-link&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;        
+&lt;/div&gt;
+&lt;!-- Edit Modal HTML --&gt;
+&lt;div id=&quot;addEmployeeModal&quot; class=&quot;modal fade&quot;&gt;
+	&lt;div class=&quot;modal-dialog&quot;&gt;
+		&lt;div class=&quot;modal-content&quot;&gt;
+			&lt;form&gt;
+				&lt;div class=&quot;modal-header&quot;&gt;						
+					&lt;h4 class=&quot;modal-title&quot;&gt;Add Employee&lt;/h4&gt;
+					&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/button&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;modal-body&quot;&gt;					
+					&lt;div class=&quot;form-group&quot;&gt;
+						&lt;label&gt;Name&lt;/label&gt;
+						&lt;input type=&quot;text&quot; class=&quot;form-control&quot; required&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;form-group&quot;&gt;
+						&lt;label&gt;Email&lt;/label&gt;
+						&lt;input type=&quot;email&quot; class=&quot;form-control&quot; required&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;form-group&quot;&gt;
+						&lt;label&gt;Address&lt;/label&gt;
+						&lt;textarea class=&quot;form-control&quot; required&gt;&lt;/textarea&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;form-group&quot;&gt;
+						&lt;label&gt;Phone&lt;/label&gt;
+						&lt;input type=&quot;text&quot; class=&quot;form-control&quot; required&gt;
+					&lt;/div&gt;					
+				&lt;/div&gt;
+				&lt;div class=&quot;modal-footer&quot;&gt;
+					&lt;input type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot; value=&quot;Cancel&quot;&gt;
+					&lt;input type=&quot;submit&quot; class=&quot;btn btn-success&quot; value=&quot;Add&quot;&gt;
+				&lt;/div&gt;
+			&lt;/form&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Edit Modal HTML --&gt;
+&lt;div id=&quot;editEmployeeModal&quot; class=&quot;modal fade&quot;&gt;
+	&lt;div class=&quot;modal-dialog&quot;&gt;
+		&lt;div class=&quot;modal-content&quot;&gt;
+			&lt;form&gt;
+				&lt;div class=&quot;modal-header&quot;&gt;						
+					&lt;h4 class=&quot;modal-title&quot;&gt;Edit Employee&lt;/h4&gt;
+					&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/button&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;modal-body&quot;&gt;					
+					&lt;div class=&quot;form-group&quot;&gt;
+						&lt;label&gt;Name&lt;/label&gt;
+						&lt;input type=&quot;text&quot; class=&quot;form-control&quot; required&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;form-group&quot;&gt;
+						&lt;label&gt;Email&lt;/label&gt;
+						&lt;input type=&quot;email&quot; class=&quot;form-control&quot; required&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;form-group&quot;&gt;
+						&lt;label&gt;Address&lt;/label&gt;
+						&lt;textarea class=&quot;form-control&quot; required&gt;&lt;/textarea&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;form-group&quot;&gt;
+						&lt;label&gt;Phone&lt;/label&gt;
+						&lt;input type=&quot;text&quot; class=&quot;form-control&quot; required&gt;
+					&lt;/div&gt;					
+				&lt;/div&gt;
+				&lt;div class=&quot;modal-footer&quot;&gt;
+					&lt;input type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot; value=&quot;Cancel&quot;&gt;
+					&lt;input type=&quot;submit&quot; class=&quot;btn btn-info&quot; value=&quot;Save&quot;&gt;
+				&lt;/div&gt;
+			&lt;/form&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Delete Modal HTML --&gt;
+&lt;div id=&quot;deleteEmployeeModal&quot; class=&quot;modal fade&quot;&gt;
+	&lt;div class=&quot;modal-dialog&quot;&gt;
+		&lt;div class=&quot;modal-content&quot;&gt;
+			&lt;form&gt;
+				&lt;div class=&quot;modal-header&quot;&gt;						
+					&lt;h4 class=&quot;modal-title&quot;&gt;Delete Employee&lt;/h4&gt;
+					&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/button&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;modal-body&quot;&gt;					
+					&lt;p&gt;Are you sure you want to delete these Records?&lt;/p&gt;
+					&lt;p class=&quot;text-warning&quot;&gt;&lt;small&gt;This action cannot be undone.&lt;/small&gt;&lt;/p&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;modal-footer&quot;&gt;
+					&lt;input type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot; value=&quot;Cancel&quot;&gt;
+					&lt;input type=&quot;submit&quot; class=&quot;btn btn-danger&quot; value=&quot;Delete&quot;&gt;
+				&lt;/div&gt;
+			&lt;/form&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>	
+													<script>
+							var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+								mode: "text/html",
+								tabMode: "indent",
+								styleActiveLine: true,
+								lineNumbers: true,
+								lineWrapping: true
+							});
+						</script>									
+					</div>
+				</div>
+			</div>
+			<div class="pane" id="preview-pane">
+				<div class="outer-wrapper">
+					<span class="hide-preview-pane">&nbsp;</span>
+					<div class="output-area">
+						<iframe id="preview" name="preview"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="code_footer_h">
+	<div class="col inline_icon_h">
+	<img src="assets/images/logo.png" alt="CodeLab" width="25px" /></div>
+		</div>
+	</footer>
+</body>
+
+</html>
+

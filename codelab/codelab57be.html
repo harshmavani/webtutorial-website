@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>Live Demo: Sorting PHP Indexed Array in Descending Order</title>
+	<meta name="description" content="The PHP showcase will show you how the output of the example code will look like when you execute it on your server." />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./assets/css/codemirror.css" />
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/default-1.2.css" />
+	<script src="./assets/js/jquery.min.js"></script>
+	<script src="./assets/js/codemirror.js"></script>
+	<script src="./assets/js/utility.js"></script>
+	<script src="./assets/js/xml.js"></script>    
+	<link rel="stylesheet" href="./assets/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<script src="./assets/js/clike.js"></script>
+<script src="./assets/js/php.js"></script>
+<script src="./assets/js/css.js"></script>
+<script src="./assets/js/htmlmixed.js"></script>
+<script src="./assets/js/javascript.js"></script>
+<script src="./assets/js/sql.js"></script>
+
+<div class="main_hw">
+	<div class="header clearfix">
+		<div class="top-ad-box">
+	</div>
+		<div class="logo">
+			<img src="assets/images/logo.png" alt="CodeLab" />
+			<span style="position: relative;font-size: 25px;top: 8px;margin-left:5px"> Code Area </span>
+		</div>
+		<div class="control-bar">
+			<div class="buttons">
+				<a onClick="updatePreview();" class="show-output isDisabled">preview</a>
+				<a onClick="toggleView();" class="toggle-view" title="Change Editor Layout"><i class="fa fa-retweet" aria-hidden="true"></i>
+</a>
+			</div>                            
+		</div>               
+	</div>
+</div>
+<div class="frame-box vr">
+	<div class="pane-wrapper clearfix">
+		<div class="pane" id="code-pane">
+			<div class="outer-area">
+				<span class="show-preview-pane">&nbsp;</span>
+				<div class="inner-area">
+					<input type="hidden" id="current-code" name="current-code" />
+<textarea id="code" name="code"><!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<title>Sorting PHP Indexed Array in Descending Order</title>
+	</head>
+	<body>
+	
+	<?php
+	// Define array
+	$colors = array("Red", "Green", "Blue", "Yellow");
+		
+	// Sorting and printing array
+	rsort($colors);
+	print_r($colors);
+	?>
+</body>
+</html></textarea>	
+						<script>
+							var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+								mode: "application/x-httpd-php",
+								lineNumbers: true,
+								readOnly: true
+							});
+						</script>									
+					</div>
+				</div>
+			</div>
+			<div class="pane" id="preview-pane">
+				<div class="outer-wrapper">
+					<span class="hide-preview-pane">&nbsp;</span>
+					<div class="output-area">
+						<iframe id="preview" src="output_file/php/sorting-indexed-array-in-alphabetically-descending-order.html"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="code_footer_h">
+	<div class="col inline_icon_h">
+	<img src="assets/images/logo.png" alt="CodeLab" width="25px" /></div>
+		</div>
+	</footer>
+</body>
+</html>
+
+
+

@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<title>Live Demo: Bootstrap Navbar with Search Box in Dropdown</title>
+	<meta name="description" content="Try and test HTML code online in a simple and easy way using our free HTML editor and see the results in real-time." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+	<link rel="stylesheet" href="./assets/css/codemirror.css" />
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/default-1.2.css" />
+	<script src="./assets/js/jquery.min.js"></script>
+	<script src="./assets/js/codemirror.js"></script>
+	<script src="./assets/js/utility.js"></script>
+	<script src="./assets/js/xml.js"></script>    
+	<link rel="stylesheet" href="./assets/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<script src="./assets/js/clike.js"></script>
+<script src="./assets/js/php.js"></script>
+<script src="./assets/js/css.js"></script>
+<script src="./assets/js/htmlmixed.js"></script>
+<script src="./assets/js/javascript.js"></script>
+<script src="./assets/js/sql.js"></script>
+
+	<script>
+		$(document).ready(function(){
+        	updatePreview();
+    	});    
+	</script>
+</head>
+<body>
+	<div class="main_hw">
+		<div class="header clearfix">
+			<div class="top-ad-box">
+		</div>
+			<div class="logo">
+				<img src="assets/images/logo.png" alt="CodeLab" />
+				<span style="position: relative;font-size: 25px;top: 8px;margin-left:5px"> Code Area </span>
+			</div>
+			<div class="control-bar">
+				<div class="buttons">
+					<a onClick="updatePreview();" class="show-output">preview</a>
+					<a onClick="toggleView();" class="toggle-view" title="Change Editor Layout"><i class="fa fa-retweet" aria-hidden="true"></i>
+</a>
+				</div>                            
+			</div>               
+		</div>
+	</div>
+	<div class="frame-box vr">
+		<div class="pane-wrapper clearfix">
+			<div class="pane" id="code-pane">
+				<div class="outer-area">
+					<span class="show-preview-pane">&nbsp;</span>
+					<div class="inner-area">
+						<input type="hidden" id="current-code" name="current-code" />
+<textarea id="code" name="code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;title&gt;Bootstrap Navbar with Search Box in Dropdown&lt;/title&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css?family=Varela+Round&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;style&gt;
+	body {
+		font-family: 'Varela Round', sans-serif;
+	}
+	.form-control {
+		box-shadow: none;
+		border-radius: 4px;
+	}
+	.form-control:focus {
+		border-color: #f08373;
+		box-shadow: 0 0 8px rgba(0,0,0,0.1);
+	}
+
+	.navbar {
+		background: #fff;
+		padding-left: 16px;
+		padding-right: 16px;
+		border-bottom: 1px solid #dfe3e8;
+		border-radius: 0;
+	}
+	.navbar .navbar-brand, .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+		padding-left: 0;
+		font-size: 20px;
+		padding-right: 50px;
+	}
+	.navbar .navbar-brand b {
+		font-weight: bold;
+		color: #eb5844;		
+	}
+	.navbar ul.nav li a {
+		color: #888;
+	}
+	.navbar ul.nav li a:hover, .navbar ul.nav li a:focus {
+		color: #f08373 !important;
+	}
+	.navbar ul.nav li.active &gt; a, .navbar ul.nav li.open &gt; a {
+		color: #eb5844 !important;
+		background: transparent !important;
+	}
+	.search-box {
+		width: 100%;
+		position: relative;
+	}	
+	.search-box input {		
+		border-color: #dfe3e8;        
+		box-shadow: none
+	}
+	.search-box input, .search-box .btn {
+		min-height: 38px;
+		border-radius: 2px;
+	}
+	.search-box .input-group-btn .btn {
+		border-color: #eb5844;
+		background: #eb5844;
+		outline: none;
+	}
+	.navbar ul li i {
+		font-size: 18px;
+		line-height: 16px;
+	}
+	.navbar .navbar-right .dropdown-toggle::after {
+		display: none;
+	}
+	.navbar .dropdown-menu {
+		border-radius: 1px;
+		border-color: #e5e5e5;
+		box-shadow: 0 2px 8px rgba(0,0,0,.05);
+	}
+	.navbar .dropdown-menu li a {
+		padding: 6px 20px;
+	}
+	.navbar .navbar-right .dropdown-menu {
+		width: 400px;
+		padding: 20px;
+		left: auto;
+		right: 0;
+		font-size: 14px;
+	}
+	.hide {
+		display: none !important;
+	}
+	@media (max-width: 768px){
+		.navbar .navbar-right .dropdown-menu {
+			width: 100%;
+			background: transparent;
+			padding: 10px 20px;
+		}
+		.navbar .input-group {
+			width: 100%;
+		}
+	}
+&lt;/style&gt;
+&lt;script&gt;
+	$(document).ready(function(){
+		var dropdown = $(&quot;.navbar-right .dropdown&quot;);
+		var toogleBtn = $(&quot;.navbar-right .dropdown-toggle&quot;);
+		
+		// Toggle search and close icon for search dropdown
+		dropdown.on(&quot;show.bs.dropdown&quot;, function(e){
+			toogleBtn.toggleClass(&quot;hide&quot;);
+		});
+		dropdown.on(&quot;hide.bs.dropdown&quot;, function(e){
+			toogleBtn.addClass(&quot;hide&quot;);
+			toogleBtn.first().removeClass(&quot;hide&quot;);
+		});
+	});
+&lt;/script&gt;
+&lt;/head&gt; 
+&lt;body&gt;
+&lt;nav class=&quot;navbar navbar-default navbar-expand-lg navbar-light&quot;&gt;
+	&lt;div class=&quot;navbar-header&quot;&gt;
+		&lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;Brand&lt;b&gt;Name&lt;/b&gt;&lt;/a&gt;  		
+		&lt;button type=&quot;button&quot; data-target=&quot;#navbarCollapse&quot; data-toggle=&quot;collapse&quot; class=&quot;navbar-toggle&quot;&gt;
+			&lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+			&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+			&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+			&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;!-- Collection of nav links, forms, and other content for toggling --&gt;
+	&lt;div id=&quot;navbarCollapse&quot; class=&quot;collapse navbar-collapse&quot;&gt;
+		&lt;ul class=&quot;nav navbar-nav&quot;&gt;
+			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;			
+			&lt;li class=&quot;dropdown&quot;&gt;
+				&lt;a data-toggle=&quot;dropdown&quot; class=&quot;dropdown-toggle&quot; href=&quot;#&quot;&gt;Services &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+				&lt;ul class=&quot;dropdown-menu&quot;&gt;					
+					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Web Design&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Web Development&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Graphic Design&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Digital Marketing&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Pricing&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;		
+		&lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;			
+			&lt;li class=&quot;dropdown&quot;&gt;
+				&lt;a data-toggle=&quot;dropdown&quot; class=&quot;dropdown-toggle&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+				&lt;a data-toggle=&quot;dropdown&quot; class=&quot;nav-link dropdown-toggle hide&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-close&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+				&lt;ul class=&quot;dropdown-menu&quot;&gt;
+					&lt;li&gt;
+						&lt;form&gt;
+							&lt;div class=&quot;input-group search-box&quot;&gt;								
+								&lt;input type=&quot;text&quot; id=&quot;search&quot; class=&quot;form-control&quot; placeholder=&quot;Search here...&quot;&gt;
+								&lt;span class=&quot;input-group-btn&quot;&gt;
+									&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;&lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+								&lt;/span&gt;
+							&lt;/div&gt;
+						&lt;/form&gt;                        
+					&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-google-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-pinterest-p&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/nav&gt;
+&lt;/body&gt;
+&lt;/html&gt;                                                        </textarea>
+													<script>
+							var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+								mode: "text/html",
+								tabMode: "indent",
+								styleActiveLine: true,
+								lineNumbers: true,
+								lineWrapping: true
+							});
+						</script>									
+					</div>
+				</div>
+			</div>
+			<div class="pane" id="preview-pane">
+				<div class="outer-wrapper">
+					<span class="hide-preview-pane">&nbsp;</span>
+					<div class="output-area">
+						<iframe id="preview" name="preview"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="code_footer_h">
+	<div class="col inline_icon_h">
+	<img src="assets/images/logo.png" alt="CodeLab" width="25px" /></div>
+		</div>
+	</footer>
+</body>
+
+</html>
+
